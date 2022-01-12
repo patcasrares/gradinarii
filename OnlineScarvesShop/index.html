@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animale salbatice</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/lightslider.css" />
+
+    <script type="text/javascript" src="js/JQuery3.3.1.js"></script>
+    <script type="text/javascript" src="js/lightslider.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+
+    <div class="first_one" id="first_section">
+        <div class="bubble_overlay" id="bubble_over"></div>
+       
+        <div class=" container1">
+            <div id = "intro" style="display: flex;">
+                <img id="play" onclick="myFunction()" style="width: 400px; height: 400px" src="img/play.png"/>
+                <img id="speaker"  onclick="myFunction()" style="width: 400px; height: 400px" src="img/bufnita.png"/>
+            </div>
+            <div id = "bufnita" style="display: none;">
+                <img id="imgBuf" class="interact" onclick="myFunction()" style="width: 400px; height: 400px" src="img/bufnita.png"/>
+                <img id="imgSavana"  onclick="myFunction()" style="width: 400px; height: 400px" src="img/savana.jpg"/>
+            </div>
+            <div id= "open" style = "display: none">
+                <video autoplay id="video" onpause="openLeu()" style="width: 100%;height: 100%;" controls>Your browser does not support the &lt;video&gt; tag.
+                    <source src="filmari/porecla.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id= "openLeu" style = "display: none">
+                <video autoplay id="video2" onpause="manancaLeu()" style="width: 100%;height: 100%;" controls>Your browser does not support the &lt;video&gt; tag.
+                    <source src="filmari/leu.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+        </div>
+
+            <script src="js/script.js" type="text/javascript"></script>
+            <script src="js/bubble.js" type="text/javascript"></script>
+            <script>
+                const playSound = async (url) => {
+                    const audio = new Audio(url);
+                    audio.play();  
+                }
+                started = false
+
+                function myFunction() {
+                    if (started)
+                        return;
+                    document.getElementById("speaker").className = "interact"
+                    document.getElementById("play").className = "interact"
+
+                    document.getElementById("speaker").style.position = "relative"
+                    document.getElementById("play").style.position = "relative"
+
+                    started = true
+                    const audio = new Audio("audio/introducere.mp3");
+                    audio.play();  
+                    
+                    audio.onended = function(){
+                        //window.location="animale_pagini/porecla.html"
+                        elem = document.getElementById("intro")
+                        elem.style.display= "none"
+                        elem = document.getElementById("open")
+                        elem.style.display= "flex"
+                        document.getElementById("video").play()
+                        //openLeu()
+                    }
+                }
+
+                function openLeu() {
+                    document.body.style.backgroundImage = "url('img/savana.jpg') !important";
+                    elem = document.getElementById("bufnita")
+                    elem.style.display= "flex"
+                    document.getElementById("imgBuf").style.position= "relative"
+                    elem = document.getElementById("open")
+                    elem.style.display= "none"
+                    //playSound("audio/prezint-prieteni.mp3")
+                    const audio = new Audio("audio/prezint-prieteni.mp3");
+                    audio.play();
+                    audio.onended = function(){
+                        document.getElementById("openLeu").style.display = "flex"
+                        document.getElementById("bufnita").style.display = "none"
+                        document.getElementById("video2").play()
+
+                    }
+                }
+
+                function manancaLeu() {
+                    //document.getElementById("openLeu").style.display = "none"
+                    //playSound("audio/leu-mancare.mp3")
+                    const audio = new Audio("audio/leu-mancare.mp3");
+                    audio.play();
+                    audio.onended = function(){
+                        window.location="testLeu.html"
+                    }
+                }
+            </script>
+</body>
+
+</html>

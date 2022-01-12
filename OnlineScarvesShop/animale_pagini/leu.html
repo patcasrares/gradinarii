@@ -1,0 +1,23 @@
+<html>
+    <header>
+        <title>Leu</title>
+    </header>
+    <body style="margin: 0;">
+        <video onpause="myFunction()" style="width: 100%;height: 100%;" controls>Your browser does not support the &lt;video&gt; tag.
+            <source src="../filmari/leu.mp4" type="video/mp4">
+        </video>
+        <script>
+            const playSound = async (url) => {
+                    const audio = new Audio(url);
+                    audio.play();
+                    setTimeout(function(){
+                        window.location="../testLeu.html"
+ 
+                    }, 8000)
+                }
+            function myFunction() {
+                playSound("../audio/leu-mancare.mp3")
+            }
+        </script>
+    </body>
+</html>

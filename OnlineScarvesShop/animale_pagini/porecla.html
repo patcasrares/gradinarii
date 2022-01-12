@@ -1,0 +1,24 @@
+<html>
+    <header>
+        <title>Porecla</title>
+    </header>
+    <body style="margin: 0;">
+        <video id="myVideo" controls autoPlay onpause="myFunction()" style="width: 100%;height: 100%;" controls>Your browser does not support the &lt;video&gt; tag.
+            <source src="../filmari/porecla.mp4" type="video/mp4">
+        </video>
+        <script>
+            var x = document.getElementById("myVideo");
+            x.autoplay
+            const playSound = async (url) => {
+                    const audio = new Audio(url);
+                    audio.play();
+                    setTimeout(function(){
+                        window.location="leu.html"
+                    }, 31000)
+                }
+            function myFunction() {
+                playSound("../audio/prezint-prieteni.mp3")
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="memory.css" />
+    <title>Joc</title>
+    <style>
+      body {
+        background-image: url('img/savana.jpg');
+      }
+      * {  
+          cursor: url("img/mouse.png"), auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Joc de memorie</h1>
+        <h3>Animalute</h3>
+      </header>
+      <img src="img/bufnita.png" style="position:absolute;left: 20px;top: 20px;color: red;font-size: 18px;border-radius: 10px;padding: 10px;"/>
+     <!-- <a href="./index.html"
+        <button style="position:absolute;left: 20px;top: 20px;background-color: greenyellow;color: red;font-size: 18px;border-radius: 10px;padding: 10px;">
+            Pagina principala
+        </button>
+      </a>
+    -->
+      <section class="score-panel">
+        <h3>SCORUL TAU</h3>
+        <ul id="star-rating" class="star-rating">
+          <li class="star"><i class="fa fa-star"></i></li>
+          <li class="star"><i class="fa fa-star"></i></li>
+          <li class="star"><i class="fa fa-star"></i></li>
+        </ul>
+        <span class="moves-counter">0</span> MISCARI
+        <div class="timer-container">
+          <span class="timer"
+            ><i class="fa fa-hourglass-start"></i> TIMP: 00:00</span
+          >
+        </div>
+        <div class="reset">
+          <button class="btn reset-btn">
+            RESTART <i class="fa fa-repeat"></i>
+          </button>
+        </div>
+      </section>
+      <section class="win-game-modal">
+        <div id="modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <img style="width: 400px; height: 400px;" src="poze_animale/3Stars.png"/>
+          </div>
+        </div>
+      </section>
+      <ul class="deck"></ul>
+    </div>
+    <script src="memeory.js"></script>
+  </body>
+</html>
